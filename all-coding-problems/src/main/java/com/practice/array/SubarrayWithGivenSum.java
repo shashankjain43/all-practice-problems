@@ -3,7 +3,7 @@ package com.practice.array;
 import java.lang.*;
 
 public class SubarrayWithGivenSum {
-    
+
     public static void main(String[] args) {
         FastReader fr = new FastReader();
         int test = fr.nextInt();
