@@ -35,7 +35,7 @@ public class DeadlockExample2 {
 
 class A {
 	
-	public synchronized void m1(B r2) {
+	public synchronized void m1(B b) {
 		System.out.println(Thread.currentThread().getName()+" is in method1 begin");
 		try {
 			Thread.sleep(2000);
@@ -43,7 +43,7 @@ class A {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		r2.m2();
+		b.m2();
 		System.out.println(Thread.currentThread().getName()+" is in method1 end");
 
 	}
@@ -56,7 +56,7 @@ class A {
 
 class B {
 	
-	public synchronized void m1(A r1) {
+	public synchronized void m1(A a) {
 		System.out.println(Thread.currentThread().getName()+" is in method3 begin");
 		try {
 			Thread.sleep(2000);
@@ -64,7 +64,7 @@ class B {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		r1.m2();
+		a.m2();
 		System.out.println(Thread.currentThread().getName()+" is in method3 end");
 	}
 	
