@@ -1,17 +1,69 @@
 package com.practice.string;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 public class Permutation {
 
-	public static void main(String[] args) {
-		String str = "ABC";
-		int n = str.length();
-		Permutation permutation = new Permutation();
-		permutation.permute(str, 0, n - 1);
+	static class FastReader {
+
+		BufferedReader br;
+		StringTokenizer st;
+
+		public FastReader() {
+			br = new BufferedReader(new InputStreamReader(System.in));
+		}
+
+		String next() {
+			while (st == null || !st.hasMoreElements()) {
+				try {
+					st = new StringTokenizer(br.readLine());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			return st.nextToken();
+		}
+
+		int nextInt() {
+			return Integer.parseInt(next());
+		}
+
+		long nextLong() {
+			return Long.parseLong(next());
+		}
+
+		double nextDouble() {
+			return Double.parseDouble(next());
+		}
+
+		String nextLine() {
+			String str = "";
+			try {
+				str = br.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return str;
+		}
+
 	}
 
-	private void permute(String str, int l, int r) {
+	public static void main(String[] args) {
+		FastReader fr = new FastReader();
+		int test = fr.nextInt();
+		for (int i = 0; i < test; i++) {
+			String str = fr.next();
+			permute(str, 0, str.length() - 1);
+			System.out.println();
+		}
+	}
+
+	private static void permute(String str, int l, int r) {
 		if (l == r)
-			System.out.println(str);
+			System.out.print(str);
 		else {
 			for (int i = l; i <= r; i++) {
 				str = swap(str, l, i);
@@ -21,7 +73,7 @@ public class Permutation {
 		}
 	}
 
-	public String swap(String a, int i, int j) {
+	public static String swap(String a, int i, int j) {
 		char temp;
 		char[] charArray = a.toCharArray();
 		temp = charArray[i];
