@@ -1,9 +1,6 @@
 package com.practice.array;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import com.practice.FastReader;
 
 public class SubarrayWithMaxSum {
 

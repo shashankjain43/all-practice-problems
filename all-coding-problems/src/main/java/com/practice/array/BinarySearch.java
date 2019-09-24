@@ -1,5 +1,7 @@
 package com.practice.array;
 
+import com.practice.FastReader;
+
 public class BinarySearch {
 
 	public static void main(String[] args) {

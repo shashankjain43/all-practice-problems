@@ -1,6 +1,6 @@
 package com.practice.array;
 
-import java.util.Arrays;
+import com.practice.FastReader;
 
 public class InversionCountInArray {
 

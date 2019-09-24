@@ -3,6 +3,7 @@ package com.practice.string;
 public class LongestPalindrome {
 	
 	public static void main(String[] args) {
+
 		String str = "aaaabbaa";
 		System.out.println(getLongestPalindrome(str));
 	}

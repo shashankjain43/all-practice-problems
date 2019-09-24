@@ -1,5 +1,7 @@
 package com.practice.array;
 
+import com.practice.FastReader;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;

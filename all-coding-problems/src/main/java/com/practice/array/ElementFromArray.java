@@ -1,5 +1,7 @@
 package com.practice.array;
 
+import com.practice.FastReader;
+
 public class ElementFromArray {
 
 	public static void main(String[] args) {

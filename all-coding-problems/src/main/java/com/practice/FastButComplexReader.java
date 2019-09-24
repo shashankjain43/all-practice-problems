@@ -1,4 +1,4 @@
-package com.practice.array;
+package com.practice;
 
 import java.io.DataInputStream; 
 import java.io.FileInputStream; 
