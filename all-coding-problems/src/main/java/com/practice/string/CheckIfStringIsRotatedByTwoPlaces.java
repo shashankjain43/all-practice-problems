@@ -11,7 +11,7 @@ public class CheckIfStringIsRotatedByTwoPlaces {
         for (int i = 0; i < test; i++) {
             String str1 = fr.nextLine();
             String str2 = fr.nextLine();
-            System.out.println(checkIfStringIsRotatedByTwoPlaces(str1, str2) == true ? 1 : 0);
+            System.out.println(!checkIfStringIsRotatedByTwoPlaces(str1, str2) ? 0 : 1);
         }
     }
 
@@ -22,6 +22,5 @@ public class CheckIfStringIsRotatedByTwoPlaces {
         String str5 = str2.substring(0, 2);
         String str6 = str2.substring(2);
         return (str4 + str3).equals(str1) || (str6 + str5).equals(str1);
-
     }
 }
