@@ -1,4 +1,4 @@
-package com.practice.gfg.array;
+package com.practice.gfg.queue;
 
 import com.practice.gfg.FastReader;
 
