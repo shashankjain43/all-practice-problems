@@ -4,19 +4,19 @@ public class CountPathSum {
 
 	public static void main(String[] args) {
 		
-		TreeNode root = new TreeNode(20);
-		root.setLeft(new TreeNode(8));
-		root.setRight(new TreeNode(22));
-		root.getLeft().setLeft(new TreeNode(5));
-		root.getLeft().setRight(new TreeNode(3));
+		Node root = new Node(20);
+		root.setLeft(new Node(8));
+		root.setRight(new Node(22));
+		root.getLeft().setLeft(new Node(5));
+		root.getLeft().setRight(new Node(3));
 		
-		root.getLeft().left.left = new TreeNode(8);
+		root.getLeft().left.left = new Node(8);
 
-		root.getRight().setLeft(new TreeNode(4));
-		root.getRight().setRight(new TreeNode(25));
+		root.getRight().setLeft(new Node(4));
+		root.getRight().setRight(new Node(25));
 
-		root.getLeft().getRight().setLeft(new TreeNode(10));
-		root.getLeft().getRight().setRight(new TreeNode(14));
+		root.getLeft().getRight().setLeft(new Node(10));
+		root.getLeft().getRight().setRight(new Node(14));
 		
 		System.out.println("count: "+ getTotalCount(root, 46));
 
@@ -28,7 +28,7 @@ public class CountPathSum {
 
 	}
 
-	static int getTotalCount(TreeNode root, int sum){
+	static int getTotalCount(Node root, int sum){
 	    Info info = new Info();
 	    info.currSum = 0;
 	    info.count = 0;
@@ -36,7 +36,7 @@ public class CountPathSum {
 	    return info.count;
 	}
 
-	static void getCountSumUtil(TreeNode root, int sum, Info info){
+	static void getCountSumUtil(Node root, int sum, Info info){
 		
 	    if(root == null){
 	        return;

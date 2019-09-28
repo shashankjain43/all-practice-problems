@@ -7,24 +7,24 @@ public class LeftView {
 
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
-        root.left.left.left = new TreeNode(8);
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
+        root.left.left.left = new Node(8);
         printLeftView(root);
     }
 
-    private static void printLeftView(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(new TreeNode(-1));
+    private static void printLeftView(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(new Node(-1));
         queue.offer(root);
-        TreeNode prev = null;
+        Node prev = null;
         while (!queue.isEmpty()) {
-            TreeNode currNode = queue.poll();
+            Node currNode = queue.poll();
             if (currNode.data != -1) {
                 if (currNode.left != null) {
                     queue.offer(currNode.left);
@@ -33,7 +33,7 @@ public class LeftView {
                     queue.offer(currNode.right);
                 }
             } else if (!queue.isEmpty()) {
-                queue.offer(new TreeNode(-1));
+                queue.offer(new Node(-1));
             }
             if (prev != null && prev.data == -1) {
                 System.out.print(currNode.data + " ");

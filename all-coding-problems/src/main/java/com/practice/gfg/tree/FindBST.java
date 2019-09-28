@@ -6,17 +6,17 @@ public class FindBST {
 
 	public static void main(String[] args) {
 
-		TreeNode root = new TreeNode(50);
-		root.setLeft(new TreeNode(30));
-		root.setRight(new TreeNode(60));
-		root.getLeft().setLeft(new TreeNode(5));
-		root.getLeft().setRight(new TreeNode(20));
+		Node root = new Node(50);
+		root.setLeft(new Node(30));
+		root.setRight(new Node(60));
+		root.getLeft().setLeft(new Node(5));
+		root.getLeft().setRight(new Node(20));
 
-		root.getRight().setLeft(new TreeNode(45));
-		root.getRight().setRight(new TreeNode(70));
+		root.getRight().setLeft(new Node(45));
+		root.getRight().setRight(new Node(70));
 
-		root.getRight().getRight().setLeft(new TreeNode(65));
-		root.getRight().getRight().setRight(new TreeNode(80));
+		root.getRight().getRight().setLeft(new Node(65));
+		root.getRight().getRight().setRight(new Node(80));
 
 		Info info = findBST(root);
 		System.out.println("Largest BST is of size: " + info.largestBSTSize);
@@ -30,9 +30,9 @@ public class FindBST {
 		int min;
 		int size;
 		int largestBSTSize;
-		TreeNode bstRoot;
+		Node bstRoot;
 
-		public Info(boolean isBST, int max, int min, int size, int largestBSTSize, TreeNode bstRoot) {
+		public Info(boolean isBST, int max, int min, int size, int largestBSTSize, Node bstRoot) {
 			super();
 			this.isBST = isBST;
 			this.max = max;
@@ -54,7 +54,7 @@ public class FindBST {
 
 	}
 
-	public static Info findBST(TreeNode root) {
+	public static Info findBST(Node root) {
 
 		if (root == null) {
 			return new Info(true, Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 0, null);

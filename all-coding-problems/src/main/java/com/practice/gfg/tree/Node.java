@@ -1,12 +1,12 @@
 package com.practice.gfg.tree;
 
-public class TreeNode {
+public class Node {
 
 	 int data;
-	 TreeNode left;
-	 TreeNode right;
+	 Node left;
+	 Node right;
 
-	public TreeNode(int data) {
+	public Node(int data) {
 		this.data = data;
 		left = right = null;
 	}
@@ -19,25 +19,25 @@ public class TreeNode {
 		this.data = data;
 	}
 
-	public TreeNode getLeft() {
+	public Node getLeft() {
 		return left;
 	}
 
-	public void setLeft(TreeNode left) {
+	public void setLeft(Node left) {
 		this.left = left;
 	}
 
-	public TreeNode getRight() {
+	public Node getRight() {
 		return right;
 	}
 
-	public void setRight(TreeNode right) {
+	public void setRight(Node right) {
 		this.right = right;
 	}
 
 	@Override
 	public String toString() {
-		return "TreeNode [data=" + data +  "]";
+		return "Node [data=" + data +  "]";
 	}
 	
 	

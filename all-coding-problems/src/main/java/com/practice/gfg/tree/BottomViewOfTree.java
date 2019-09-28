@@ -7,17 +7,17 @@ public class BottomViewOfTree {
 
 	public static void main(String[] args) {
 		
-		TreeNode root = new TreeNode(20); 
-        root.setLeft(new TreeNode(8)); 
-        root.setRight(new TreeNode(22));
-        root.getLeft().setLeft(new TreeNode(5));
-        root.getLeft().setRight(new TreeNode(3));
+		Node root = new Node(20);
+        root.setLeft(new Node(8));
+        root.setRight(new Node(22));
+        root.getLeft().setLeft(new Node(5));
+        root.getLeft().setRight(new Node(3));
         
-        root.getRight().setLeft(new TreeNode(4));
-        root.getRight().setRight(new TreeNode(25));
+        root.getRight().setLeft(new Node(4));
+        root.getRight().setRight(new Node(25));
         
-        root.getLeft().getRight().setLeft(new TreeNode(10));
-        root.getLeft().getRight().setRight(new TreeNode(14));
+        root.getLeft().getRight().setLeft(new Node(10));
+        root.getLeft().getRight().setRight(new Node(14));
         
 		Map<Integer, Integer> lhm = new TreeMap<Integer, Integer>();
 		int hDistance = 0;
@@ -28,7 +28,7 @@ public class BottomViewOfTree {
 
 	}
 
-	private static void fillMapForBottomViewOfTree(TreeNode node, Map<Integer, Integer> lhm, int hDistance) {
+	private static void fillMapForBottomViewOfTree(Node node, Map<Integer, Integer> lhm, int hDistance) {
 		
 		lhm.put(hDistance, node.getData());
 		
