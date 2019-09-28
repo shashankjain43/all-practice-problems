@@ -24,7 +24,7 @@ public class SlidingWindowMaximum {
 	}
 
 	private static void slidingWindoMaximum(int[] arr, int k) {
-		Deque<Integer> dq = new LinkedList<Integer>();
+		Deque<Integer> dq = new LinkedList<>();
 		for (int i = 0; i < k; i++) {
 			while (!dq.isEmpty() && arr[i] >= dq.peekLast()) {
 				dq.removeLast();
