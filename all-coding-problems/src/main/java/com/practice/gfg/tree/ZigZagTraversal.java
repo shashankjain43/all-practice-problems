@@ -86,8 +86,12 @@ public class ZigZagTraversal {
 
 		Deque<TreeNode> leftToRightStack = new LinkedList<TreeNode>();
 		Deque<TreeNode> rightToLeftStack = new LinkedList<TreeNode>();
-		leftToRightStack.push(root);
-		boolean leftToRight = true;
+		boolean leftToRight = false;
+		if(leftToRight){
+			leftToRightStack.push(root);
+		} else {
+			rightToLeftStack.push(root);
+		}
 		while (!leftToRightStack.isEmpty() || !rightToLeftStack.isEmpty()) {
 			if(leftToRight) {
 				while(!leftToRightStack.isEmpty()) {
@@ -100,7 +104,6 @@ public class ZigZagTraversal {
 						rightToLeftStack.push(node.right);
 					}
 				}
-				leftToRight = false;
 			} else {
 				while(!rightToLeftStack.isEmpty()) {
 					TreeNode node = rightToLeftStack.pop();
@@ -112,8 +115,8 @@ public class ZigZagTraversal {
 						leftToRightStack.push(node.left);
 					}
 				}
-				leftToRight = true;
 			}
+			leftToRight = !leftToRight;
 		}
 	}
 
