@@ -39,15 +39,4 @@ public class DiameterOfTree {
 
 }
 
-class Height {
 
-	int height;
-
-	public Height(int i) {
-		this.height = i;
-	}
-
-	public Height() {
-	}
-
-}
