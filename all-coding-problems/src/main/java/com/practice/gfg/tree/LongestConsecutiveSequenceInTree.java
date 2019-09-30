@@ -18,11 +18,10 @@ public class LongestConsecutiveSequenceInTree {
     static int longestConsecutive(Node root) {
 
         MaxLen maxLen = new MaxLen();
-        int currLen = 1;
+        int currLen = 0;
 
         findLongestConsecutive(root, currLen, root.data, maxLen);
         return maxLen.maxLen > 1 ? maxLen.maxLen : -1;
-        ;
     }
 
     private static void findLongestConsecutive(Node root, int currLen, int expectedData, MaxLen maxLen) {
