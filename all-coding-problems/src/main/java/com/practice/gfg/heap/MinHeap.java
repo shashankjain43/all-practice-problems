@@ -3,7 +3,7 @@ package com.practice.gfg.heap;
 public class MinHeap {
 
     int[] harr;
-    int capacity,
+    int capacity;
     int heap_size;
 
     MinHeap(int cap) {
