@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.stream.IntStream;
 
-public class KthlargestInSstream {
+public class KthLargestInStream {
 
     public static void main(String[] args) {
         FastReader fr = new FastReader();
