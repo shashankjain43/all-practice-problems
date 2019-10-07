@@ -1,10 +1,9 @@
-package com.practice.leetcode;
+package com.practice.leetcode.array;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
-
     public int[] twoSum(int[] nums, int target) {
 
         int[] result = new int[2];
@@ -21,4 +20,5 @@ public class TwoSum {
         }
         return result;
     }
+
 }
