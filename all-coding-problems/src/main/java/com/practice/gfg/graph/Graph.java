@@ -103,6 +103,61 @@ public class Graph {
         return source;
     }
 
+    public void topoSort() {
+
+        Deque<Integer> stack = new LinkedList<>();
+        boolean[] visited = new boolean[nodes];
+
+        for (int i = 0; i < nodes; i++) {
+            if (visited[i] == false) {
+                topoSortUtil(i, visited, stack);
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + " ");
+        }
+    }
+
+    static int[] topoSort(ArrayList<ArrayList<Integer>> list, int N) {
+        Deque<Integer> stack = new LinkedList<>();
+        boolean[] visited = new boolean[N];
+
+        for (int i = 0; i < N; i++) {
+            if (visited[i] == false) {
+                topoSortUtil(i, visited, stack, list);
+            }
+        }
+
+        int[] arr = new int[stack.size()];
+        int i = 0;
+        while (!stack.isEmpty()) {
+            arr[i++] = stack.pop();
+        }
+        return arr;
+    }
+
+    private static void topoSortUtil(int i, boolean[] visited, Deque<Integer> stack, ArrayList<ArrayList<Integer>> list) {
+
+        visited[i] = true;
+        for (int j = 0; j < list.get(i).size(); j++) {
+            if (visited[list.get(i).get(j)] == false) {
+                topoSortUtil(list.get(i).get(j), visited, stack, list);
+            }
+        }
+        stack.push(i);
+    }
+
+    private void topoSortUtil(int i, boolean[] visited, Deque<Integer> stack) {
+        visited[i] = true;
+        for (int j = 0; j < adj[i].size(); j++) {
+            if (visited[adj[i].get(j)] == false) {
+                topoSortUtil(adj[i].get(j), visited, stack);
+            }
+        }
+        stack.push(i);
+    }
+
     class Edge {
         int source, dest;
 
