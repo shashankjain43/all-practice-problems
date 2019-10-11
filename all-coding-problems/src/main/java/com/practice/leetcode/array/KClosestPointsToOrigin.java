@@ -1,5 +1,6 @@
 package com.practice.leetcode.array;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,6 +13,8 @@ public class KClosestPointsToOrigin {
         for (int i = 0; i < points.length; i++) {
             distList.add(new DistanceFromOrigin(points[i][0] * points[i][0] + points[i][1] * points[i][1], i));
         }
+
+        //Arrays.stream(points).map(ints -> new DistanceFromOrigin(ints[0] * ints[0] + ints[1] * ints[1], i));
         return distList
                 .stream()
                 .sorted((o1, o2) -> o1.dist - o2.dist)
