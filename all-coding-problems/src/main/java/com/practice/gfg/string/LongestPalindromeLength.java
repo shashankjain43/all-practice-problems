@@ -23,16 +23,12 @@ public class LongestPalindromeLength {
         for (int i = 0; i < arr.length; i++) {
             mat[i][i] = 1;
         }
-        int start=0;
-        int end = 0;
-
         for (int len = 2; len <= arr.length; len++) {
             for (int i = 0; i <= arr.length - len; i++) {
                 int j = i + len - 1;
                 //two end of substr are equal then
                 if (arr[i] == arr[j]) {
                     mat[i][j] = mat[i + 1][j - 1] + 2;
-                    start = i;
                 } else {
                     mat[i][j] = Math.max(mat[i][j - 1], mat[i + 1][j]);
                 }
