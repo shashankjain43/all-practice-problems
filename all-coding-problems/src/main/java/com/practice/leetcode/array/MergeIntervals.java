@@ -13,7 +13,6 @@ public class MergeIntervals {
         int prev = 0;
         int curr = 1;
         Arrays.sort(intervals, (o1, o2) -> o1[0] - o2[0]);
-        //Arrays.stream(intervals).sorted((o1, o2) -> o1[0] - o2[0]).collect(Collectors.toList()).toArray(intervals);
         while (curr < intervals.length) {
             while (curr < intervals.length && intervals[prev][1] >= intervals[curr][0] && intervals[prev][0] <= intervals[curr][1]) {
                 intervals[prev][0] = Math.min(intervals[prev][0], intervals[curr][0]);
@@ -34,12 +33,8 @@ public class MergeIntervals {
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] arr = obj.merge(intervals);
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != null) {
-                for (int j = 0; j < arr[i].length; j++) {
-                    System.out.print(arr[i][j] + " ");
-                }
-            } else {
-                System.out.print("null");
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
