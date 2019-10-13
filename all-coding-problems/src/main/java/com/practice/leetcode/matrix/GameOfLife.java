@@ -1,4 +1,4 @@
-package com.practice.leetcode.array;
+package com.practice.leetcode.matrix;
 
 public class GameOfLife {
 
