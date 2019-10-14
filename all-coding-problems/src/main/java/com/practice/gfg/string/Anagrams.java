@@ -4,6 +4,7 @@ import com.practice.gfg.FastReader;
 import sun.nio.cs.CharsetMapping;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -16,16 +17,8 @@ public class Anagrams {
         for (int i = 0; i < test; i++) {
             String str1 = fr.next();
             String str2 = fr.next();
-            System.out.println(!checkIfAnagrams(str1, str2) ? "NO" : "YES");
+            System.out.println(!anagram(str1, str2) ? "NO" : "YES");
         }
-    }
-
-    private static boolean checkIfAnagrams(String str1, String str2) {
-        int value = 0;
-        for (int i = 0; i < str1.length(); i++) {
-            value = value ^ (int)str1.charAt(i) ^ (int)str2.charAt(i);
-        }
-        return value == 0;
     }
 
     public static boolean anagram(String str1, String str2) {
@@ -34,9 +27,9 @@ public class Anagrams {
 
         Map<Character, Integer> map2 = str2.chars().boxed().collect(Collectors.groupingBy(o -> Character.valueOf((char) o.intValue()), Collectors.collectingAndThen(Collectors.counting(), Long::intValue)));
 
-        if(map1.size() == map2.size()){
-            for(Map.Entry<Character, Integer> e : map1.entrySet()){
-                if(e.getValue() != map2.get(e.getKey())){
+        if (map1.size() == map2.size()) {
+            for (Map.Entry<Character, Integer> e : map1.entrySet()) {
+                if (e.getValue() != map2.get(e.getKey())) {
                     return false;
                 }
             }
@@ -45,8 +38,28 @@ public class Anagrams {
         }
         return true;
     }
-    static boolean areAnagram(String str1, String str2)
-    {
+
+    public boolean isAnagram(String s, String t) {
+        Map<Character, Integer> smap = new HashMap<>();
+        int sl = s.length();
+        int tl = t.length();
+        if (sl != tl) {
+            return false;
+        }
+        for (int i = 0; i < sl; i++) {
+            smap.put(s.charAt(i), smap.getOrDefault(s.charAt(i), 0) + 1);
+            smap.put(t.charAt(i), smap.getOrDefault(t.charAt(i), 0) - 1);
+        }
+        for (char c : smap.keySet()) {
+            if (smap.get(c) != 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    static boolean areAnagram(String str1, String str2) {
 
         str1 = str1.replaceAll("\\p{Punct}", "");
         str1 = str1.replaceAll("\\s", "");
