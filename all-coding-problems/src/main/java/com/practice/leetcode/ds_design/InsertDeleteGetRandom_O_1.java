@@ -1,4 +1,4 @@
-package com.practice.leetcode.array;
+package com.practice.leetcode.ds_design;
 
 import java.util.ArrayList;
 import java.util.HashMap;

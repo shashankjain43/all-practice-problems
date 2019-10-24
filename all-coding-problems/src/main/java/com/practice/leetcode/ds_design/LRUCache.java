@@ -1,4 +1,4 @@
-package com.practice.leetcode;
+package com.practice.leetcode.ds_design;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
